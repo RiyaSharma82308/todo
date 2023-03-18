@@ -17,7 +17,15 @@ from django.contrib import admin
 from django.urls import path
 from todoapp import views
 urlpatterns = [
+    path('',views.home,name="home"),
     path("admin/", admin.site.urls),
     path("signup/",views.signupuser,name="signupuser"),
     path("current/",views.currenttodos,name="currenttodos"),
+    path("login/",views.loginuser,name="loginuser"),
+    path("create/",views.createtodo,name="createtodo"),
+    path("logout/",views.logoutuser,name="logoutuser"),
+    path("completed/",views.completedtodos ,name="completedtodos"),
+    path("todoapp/<int:todo_pk>",views.viewtodo ,name="viewtodo"),
+    path("todoapp/<int:todo_pk>/complete",views.completetodo ,name="completetodo"),
+    path("todoapp/<int:todo_pk>/delete",views.deletetask ,name="deletetask"),
 ]
