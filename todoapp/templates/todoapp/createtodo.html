@@ -1,12 +1,20 @@
 {% extends 'todoapp/base.html' %}
 {% block content %}
 
-<h1> Create</h1>
-<h3>{{error}}</h3>
-<form method="POST">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit"> Create </button>
-</form>
 
+<div class="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <h3>{{error}}</h3>
+      <main class="px-3">
+        <h1>Create</h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button class="btn btn-success" type="submit"> Create </button>
+            <!-- <button type="submit"> Create </button> -->
+            </form>
+      </main>
+      <footer class="mt-auto text-white-50">
+        <p> <a href="https://getbootstrap.com/" class="text-white"></a> <a href="https://twitter.com/mdo" class="text-white"></a>.</p>
+      </footer>
+</div>
 {% endblock %}

@@ -1,12 +1,36 @@
 {% extends 'todoapp/base.html' %}
 {% block content %}
 
-<h1> Sign Up</h1>
-<h3>{{error}}</h3>
-<form method="POST">
-{% csrf_token %}
-{{ form.as_p }}
-<button type="submit"> Sign Up</button>
-</form>
+
+
+<div class=" text-center">
+
+
+    <div class="text-bg-dark p-5 me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+        <div class="my-1 py-4">
+            <h2 class="display-5">Signup</h2>
+            <h3>{{error}}</h3>
+        </div>
+        <div class="bg-light shadow-sm mx-auto" style="width: 80%; height: 600px; border-radius: 21px 21px 0 0;">
+            <div class="col-md-7 text-center mx-auto ">
+                <div class="h-1 p-2 text-bg-light rounded-3 ">
+                    <div class="h-100 p-3 text-bg-warning rounded-3 ">
+
+                        <form method="POST">
+                            {% csrf_token %}
+                            <br><br>
+                            {{ form.as_p }}
+                            <button class="btn btn-success" type="submit"> Sign Up </button>
+                        </form>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
 
 {% endblock %}
